@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oferta especial — Cosmética Artesanal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --cream:        #F7EFE3;
+  --cream-dark:   #EDE0CC;
+  --cream-card:   #FDF8F2;
+  --brown:        #2B1F14;
+  --brown-mid:    #5C3D1E;
+  --orange:       #D4782A;
+  --orange-light: #E8943A;
+  --gold:         #B8862A;
+  --gold-light:   #D4A94A;
+  --green:        #4A6B30;
+  --white:        #FFFFFF;
+  --gray-soft:    #8A7A6A;
+  --shadow:       0 4px 24px rgba(43,31,20,0.10);
+  --shadow-lg:    0 8px 48px rgba(43,31,20,0.15);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Lato', sans-serif;
+  background: var(--cream);
+  color: var(--brown);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* ── BANNER ── */
+.top-banner {
+  background: linear-gradient(135deg, var(--brown), #3D2810);
+  color: var(--white);
+  text-align: center;
+  padding: 13px 20px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+.top-banner span { color: var(--gold-light); }
+
+/* ── HERO ── */
+.hero {
+  background: linear-gradient(160deg, #FBF3E8 0%, #F0E2CC 60%, #E8D4B8 100%);
+  padding: 52px 20px 48px;
+  text-align: center;
+}
+.hero-tag {
+  display: inline-block;
+  background: var(--orange);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 5px 18px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+}
+.hero-thanks {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--brown-mid);
+  margin-bottom: 10px;
+  letter-spacing: 0.02em;
+}
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(30px, 6vw, 54px);
+  color: var(--brown);
+  line-height: 1.1;
+  max-width: 680px;
+  margin: 0 auto 14px;
+}
+.hero-title em {
+  color: var(--orange);
+  font-style: normal;
+}
+.hero-sub {
+  font-size: clamp(15px, 2vw, 17px);
+  color: var(--brown-mid);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ── VALOR TABLE ── */
+.value-section {
+  background: var(--cream-card);
+  padding: 48px 20px;
+}
+.value-inner {
+  max-width: 620px;
+  margin: 0 auto;
+}
+.value-label {
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-align: center;
+  margin-bottom: 20px;
+}
+.value-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.value-table th {
+  background: var(--brown);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 12px 20px;
+  text-align: left;
+}
+.value-table th:last-child { text-align: right; }
+.value-table td {
+  padding: 13px 20px;
+  font-size: 15px;
+  color: var(--brown);
+  border-bottom: 1px solid var(--cream-dark);
+}
+.value-table td:last-child {
+  text-align: right;
+  font-weight: 900;
+  color: var(--gray-soft);
+  text-decoration: line-through;
+  font-size: 14px;
+}
+.value-table tr:last-child td { border-bottom: none; }
+.value-table tr:last-child td:first-child {
+  font-weight: 900;
+  color: var(--brown);
+}
+.value-total-row td {
+  background: linear-gradient(135deg, #FAF2E4, #F5E8D0);
+  border-top: 2px solid var(--gold) !important;
+  border-bottom: none !important;
+  font-weight: 900 !important;
+}
+.value-total-row td:first-child { color: var(--brown) !important; font-size: 16px; }
+.value-total-row td:last-child {
+  text-decoration: none !important;
+  color: var(--orange) !important;
+  font-size: 20px !important;
+  font-family: 'Playfair Display', serif;
+}
+.value-footer {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--brown-mid);
+  font-weight: 700;
+}
+.value-footer strong { color: var(--orange); }
+
+/* ── EBOOKS LIST ── */
+.ebooks-section {
+  background: var(--cream);
+  padding: 48px 20px;
+}
+.ebooks-inner {
+  max-width: 620px;
+  margin: 0 auto;
+}
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(22px, 4vw, 32px);
+  font-weight: 900;
+  color: var(--brown);
+  margin-bottom: 6px;
+}
+.section-title em { color: var(--orange); font-style: normal; }
+.section-desc {
+  font-size: 15px;
+  color: var(--brown-mid);
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+.ebook-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.ebook-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--white);
+  border-radius: 14px;
+  padding: 16px 20px;
+  box-shadow: var(--shadow);
+  border-left: 4px solid var(--orange);
+}
+.ebook-emoji {
+  font-size: 26px;
+  flex-shrink: 0;
+  width: 42px;
+  text-align: center;
+}
+.ebook-text strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 900;
+  color: var(--brown);
+  margin-bottom: 2px;
+}
+.ebook-text span {
+  font-size: 13px;
+  color: var(--gray-soft);
+  line-height: 1.5;
+}
+.ebook-price {
+  margin-left: auto;
+  font-size: 13px;
+  font-weight: 900;
+  color: var(--gray-soft);
+  text-decoration: line-through;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ── CTA BLOCK ── */
+.cta-section {
+  background: linear-gradient(160deg, #FAF2E4, #F0E4CC);
+  padding: 52px 20px;
+  text-align: center;
+}
+.cta-inner {
+  max-width: 480px;
+  margin: 0 auto;
+}
+.cta-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 4.5vw, 36px);
+  font-weight: 900;
+  color: var(--brown);
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+.cta-heading em { color: var(--orange); font-style: normal; }
+.cta-desc {
+  font-size: 15px;
+  color: var(--brown-mid);
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+.price-block {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 32px 28px 24px;
+  box-shadow: var(--shadow-lg);
+  border: 2px solid var(--cream-dark);
+  position: relative;
+  margin-bottom: 0;
+}
+.price-tag {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--green);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 5px 20px;
+  border-radius: 50px;
+  white-space: nowrap;
+}
+.price-old {
+  font-size: 14px;
+  color: var(--gray-soft);
+  text-decoration: line-through;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.price-now {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(52px, 10vw, 72px);
+  font-weight: 900;
+  color: var(--orange);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.price-now sup { font-size: 0.42em; vertical-align: super; }
+.price-note {
+  font-size: 13px;
+  color: var(--gray-soft);
+  margin-bottom: 22px;
+}
+
+/* Countdown */
+.cd-wrap {
+  background: linear-gradient(135deg, #3D2409, #5C3A14);
+  border-radius: 12px;
+  padding: 14px 20px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.cd-label-text {
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.8);
+  white-space: nowrap;
+}
+.cd-digits {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.cd-num {
+  background: var(--orange);
+  color: var(--white);
+  font-size: 22px;
+  font-weight: 900;
+  border-radius: 8px;
+  padding: 4px 10px;
+  min-width: 46px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+.cd-sep { color: var(--gold-light); font-weight: 900; font-size: 20px; }
+
+/* Buttons */
+.btn-yes {
+  display: block;
+  width: 100%;
+  background: linear-gradient(135deg, var(--orange), var(--orange-light));
+  color: var(--white);
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 18px 24px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 6px 28px rgba(212,120,42,0.38);
+  transition: transform 0.18s, box-shadow 0.18s;
+  text-align: center;
+  margin-bottom: 12px;
+}
+.btn-yes:hover { transform: translateY(-2px); box-shadow: 0 10px 36px rgba(212,120,42,0.50); }
+
+.btn-no {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  color: var(--gray-soft);
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 6px;
+  transition: color 0.18s;
+}
+.btn-no:hover { color: var(--brown-mid); }
+
+.guarantee {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--green);
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--cream-dark);
+  text-align: center;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--brown);
+  color: rgba(255,255,255,0.5);
+  text-align: center;
+  padding: 24px 20px;
+  font-size: 12px;
+  line-height: 1.7;
+}
+footer a { color: rgba(255,255,255,0.55); text-decoration: underline; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 500px) {
+  .value-table th, .value-table td { padding: 10px 14px; }
+  .ebook-item { padding: 14px 16px; }
+  .price-block { padding: 28px 18px 20px; }
+  .ebook-price { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- BANNER -->
+<div class="top-banner">
+  ✅ ¡Compra confirmada! Tu acceso al curso ya está activo en tu mail &nbsp;·&nbsp; <span>Una sola cosa antes de entrar →</span>
+</div>
+
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-tag">⚡ Oferta exclusiva post-compra</div>
+  <p class="hero-thanks">Solamente disponible para compradores 👇</p>
+  <h1 class="hero-title">
+    Ampliá tu negocio con <em>6 ebooks de cosmética artesanal</em> para fabricar y vender desde casa
+  </h1>
+  <p class="hero-sub">
+    Labiales, cremas, sérums, sales de baño y más — con fórmulas listas, instrucciones paso a paso y precios de venta sugeridos. Solo disponible ahora, justo después de tu compra.
+  </p>
+</section>
+
+
+<!-- TABLA DE VALOR -->
+<section class="value-section">
+  <div class="value-inner">
+    <p class="value-label">Lo que obtenés en este pack</p>
+    <table class="value-table">
+      <thead>
+        <tr>
+          <th>Ebook</th>
+          <th>Precio individual</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div style="display:flex;align-items:center;gap:14px;">
+              <img src="https://tiendaconectada0.wordpress.com/wp-content/uploads/2026/08/gemini_generated_image_fgbei3fgbei3fgbe-1-photoroom.png" alt="Labiales y gloss artesanales" style="width:54px;height:54px;object-fit:contain;border-radius:8px;flex-shrink:0;">
+              <span>💄 Labiales y gloss artesanales</span>
+            </div>
+          </td>
+          <td>$17</td>
+        </tr>
+        <tr>
+          <td>
+            <div style="display:flex;align-items:center;gap:14px;">
+              <img src="https://tiendaconectada0.wordpress.com/wp-content/uploads/2026/08/gemini_generated_image_5np8fv5np8fv5np8-photoroom-1.png" alt="Cremas hidratantes y corporales" style="width:54px;height:54px;object-fit:contain;border-radius:8px;flex-shrink:0;">
+              <span>🧴 Cremas hidratantes y corporales</span>
+            </div>
+          </td>
+          <td>$17</td>
+        </tr>
+        <tr>
+          <td>
+            <div style="display:flex;align-items:center;gap:14px;">
+              <img src="https://tiendaconectada0.wordpress.com/wp-content/uploads/2026/08/gemini_generated_image_o5r76io5r76io5r7-photoroom-1.png" alt="Sérums y aceites faciales" style="width:54px;height:54px;object-fit:contain;border-radius:8px;flex-shrink:0;">
+              <span>✨ Sérums y aceites faciales</span>
+            </div>
+          </td>
+          <td>$17</td>
+        </tr>
+        <tr>
+          <td>
+            <div style="display:flex;align-items:center;gap:14px;">
+              <img src="https://tiendaconectada0.wordpress.com/wp-content/uploads/2026/08/gemini_generated_image_7egcd87egcd87egc-photoroom-1.png" alt="Sales de baño y bombas efervescentes" style="width:54px;height:54px;object-fit:contain;border-radius:8px;flex-shrink:0;">
+              <span>🛁 Sales de baño y bombas efervescentes</span>
+            </div>
+          </td>
+          <td>$17</td>
+        </tr>
+        <tr>
+          <td>
+            <div style="display:flex;align-items:center;gap:14px;">
+              <img src="https://tiendaconectada0.wordpress.com/wp-content/uploads/2026/08/gemini_generated_image_23eczm23eczm23ec-photoroom-1.png" alt="Perfumes y aguas de colonia" style="width:54px;height:54px;object-fit:contain;border-radius:8px;flex-shrink:0;">
+              <span>🌸 Perfumes y aguas de colonia</span>
+            </div>
+          </td>
+          <td>$17</td>
+        </tr>
+        <tr>
+          <td>
+            <div style="display:flex;align-items:center;gap:14px;">
+              <img src="https://tiendaconectada0.wordpress.com/wp-content/uploads/2026/08/gemini_generated_image_52il3t52il3t52il-photoroom-1.png" alt="Guía de packaging y precios para vender" style="width:54px;height:54px;object-fit:contain;border-radius:8px;flex-shrink:0;">
+              <span>📦 Guía de packaging y precios para vender</span>
+            </div>
+          </td>
+          <td>$17</td>
+        </tr>
+        <tr class="value-total-row">
+          <td>Pack completo — precio de hoy</td>
+          <td>$27 USD</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="value-footer">Comprás los 6 por el precio de menos de 2. <strong>Ahorrás $75 USD.</strong></p>
+  </div>
+</section>
+
+
+<!-- DETALLE EBOOKS -->
+<section class="ebooks-section">
+  <div class="ebooks-inner">
+    <h2 class="section-title">Qué encontrás en <em>cada ebook</em></h2>
+    <p class="section-desc">Cada guía incluye fórmulas detalladas, ingredientes con proveedor sugerido, fotos del proceso y precio de venta recomendado para el mercado hispano.</p>
+
+    <div class="ebook-list">
+      <div class="ebook-item">
+        <div class="ebook-emoji">💄</div>
+        <div class="ebook-text">
+          <strong>Labiales y gloss artesanales</strong>
+          <span>12 fórmulas — manteca de karité, aceites vegetales y pigmentos naturales. Precio de venta sugerido: $8–$15 c/u.</span>
+        </div>
+        <div class="ebook-price">$17</div>
+      </div>
+      <div class="ebook-item">
+        <div class="ebook-emoji">🧴</div>
+        <div class="ebook-text">
+          <strong>Cremas hidratantes y corporales</strong>
+          <span>10 fórmulas base + variantes por piel. Las cremas tienen el margen más alto del mercado artesanal.</span>
+        </div>
+        <div class="ebook-price">$17</div>
+      </div>
+      <div class="ebook-item">
+        <div class="ebook-emoji">✨</div>
+        <div class="ebook-text">
+          <strong>Sérums y aceites faciales</strong>
+          <span>8 fórmulas. Alta demanda, ticket premium. Incluye versiones para piel seca, mixta y con acné.</span>
+        </div>
+        <div class="ebook-price">$17</div>
+      </div>
+      <div class="ebook-item">
+        <div class="ebook-emoji">🛁</div>
+        <div class="ebook-text">
+          <strong>Sales de baño y bombas efervescentes</strong>
+          <span>15 recetas. Productos de alta rotación, ideales para regalo y fechas especiales.</span>
+        </div>
+        <div class="ebook-price">$17</div>
+      </div>
+      <div class="ebook-item">
+        <div class="ebook-emoji">🌸</div>
+        <div class="ebook-text">
+          <strong>Perfumes y aguas de colonia</strong>
+          <span>8 fórmulas con aceites esenciales y fijadores naturales. Productos de alto valor percibido.</span>
+        </div>
+        <div class="ebook-price">$17</div>
+      </div>
+      <div class="ebook-item">
+        <div class="ebook-emoji">📦</div>
+        <div class="ebook-text">
+          <strong>Guía de packaging y precios para vender</strong>
+          <span>Cómo presentar, etiquetar y fijar precios de toda tu línea. Incluye calculadora de costos.</span>
+        </div>
+        <div class="ebook-price">$17</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CTA PRINCIPAL -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <h2 class="cta-heading">Agregá los 6 ebooks<br>por <em>$27 USD</em></h2>
+    <p class="cta-desc">Un solo clic — sin llenar nada. El acceso se suma automáticamente a tu compra.</p>
+
+    <div class="price-block">
+      <div class="price-tag">✦ Solo disponible ahora</div>
+
+      <p class="price-old">Precio individual: $102 USD</p>
+      <div class="price-now"><sup>$</sup>27</div>
+      <p class="price-note">USD · Un solo pago · Acceso inmediato a los 6 ebooks</p>
+
+      <div class="cd-wrap">
+        <span class="cd-label-text">⏳ Oferta disponible por</span>
+        <div class="cd-digits">
+          <span class="cd-num" id="cdM">04</span>
+          <span class="cd-sep">:</span>
+          <span class="cd-num" id="cdS">59</span>
+        </div>
+      </div>
+
+      <script type="text/javascript">
+        function importHotmart(){
+          var imported = document.createElement('script');
+          imported.src = 'https://static.hotmart.com/checkout/widget.min.js';
+          document.head.appendChild(imported);
+          var link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.type = 'text/css';
+          link.href = 'https://static.hotmart.com/css/hotmart-fb.min.css';
+          document.head.appendChild(link);
+        }
+        importHotmart();
+      </script>
+      <a onclick="return false;" href="https://pay.hotmart.com/S107363626C?checkoutMode=2" class="hotmart-fb hotmart__button-checkout" style="display:block;width:100%;margin-bottom:12px;"><img src='https://static.hotmart.com/img/btn-buy-green.png' style="width:100%;max-width:100%;border-radius:50px;"></a>
+      <button class="btn-no" id="skipBtn">No gracias, prefiero ir directo al curso</button>
+
+      <div class="guarantee">
+        🔒 Compra segura &nbsp;·&nbsp; Acceso inmediato &nbsp;·&nbsp; Garantía 7 días
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Jabones Artesanales — Curso en Video · <a href="/politica-de-privacidad.html">Política de privacidad</a> · <a href="/terminos-y-condiciones.html">Términos y condiciones</a></p>
+  <p style="margin-top:10px;max-width:680px;margin-inline:auto;">AVISO LEGAL: Este sitio no es parte del sitio web de Facebook o Meta, Inc., ni está respaldado por Facebook de ninguna manera. FACEBOOK es una marca registrada de META, Inc.</p>
+</footer>
+
+
+<script>
+// ── COUNTDOWN 5 min ──
+(function () {
+  const KEY = 'up_cd_end_v3', DURATION = 5 * 60;
+  let end = parseInt(sessionStorage.getItem(KEY) || '0');
+  const now = Math.floor(Date.now() / 1000);
+  if (!end || end <= now) { end = now + DURATION; sessionStorage.setItem(KEY, end); }
+  function pad(n) { return String(n).padStart(2, '0'); }
+  function tick() {
+    const r = Math.max(0, end - Math.floor(Date.now() / 1000));
+    const elM = document.getElementById('cdM'), elS = document.getElementById('cdS');
+    if (elM) elM.textContent = pad(Math.floor(r / 60));
+    if (elS) elS.textContent = pad(r % 60);
+    if (r > 0) { setTimeout(tick, 1000); }
+    // Al llegar a 0 se queda en 00:00 y el botón sigue activo
+  }
+  tick();
+})();
+
+// ── SKIP ──
+document.getElementById('skipBtn').addEventListener('click', function () {
+  window.location.href = '#gracias'; // reemplazar con URL de página de gracias Hotmart
+});
+
+// ── SCROLL REVEAL ──
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; obs.unobserve(e.target); }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.ebook-item, .price-block, .value-table').forEach(el => {
+  el.style.opacity = '0'; el.style.transform = 'translateY(18px)';
+  el.style.transition = 'opacity 0.45s ease, transform 0.45s ease';
+  obs.observe(el);
+});
+</script>
+</body>
+</html>
