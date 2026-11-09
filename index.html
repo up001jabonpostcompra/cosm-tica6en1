@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mi sistema</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚽</text></svg>">
+<style>
+:root{--bg:#F3F5F9;--card:#fff;--ink:#1F2A44;--mut:#5d6881;--line:#d9deea;--ac:#2E7D5B;--acs:#dcebe3;--onac:#fff}
+@media(prefers-color-scheme:dark){:root{--bg:#0f1626;--card:#1a2338;--ink:#eef1f8;--mut:#9aa6c0;--line:#2b3753;--ac:#4fb68a;--acs:#1d3a31;--onac:#0f1626}}
+*{box-sizing:border-box}
+html{color-scheme:light dark}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding:env(safe-area-inset-top,0px) 0 calc(76px + env(safe-area-inset-bottom,0px))}
+main{max-width:560px;margin:0 auto;padding:16px}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+button:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+h1{font:800 30px/1.1 "Arial Narrow","Helvetica Neue",Arial,sans-serif;letter-spacing:-.5px;margin:4px 0 2px}
+h2{font-size:14px;font-weight:700;color:var(--mut);margin:20px 0 6px}
+.sub{color:var(--mut);margin:0 0 14px}
+.strip{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-bottom:14px}
+.strip button{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px 0 6px;text-align:center;line-height:1.15}
+.strip b{display:block;font-size:19px}
+.strip span{font-size:12px;color:var(--mut)}
+.strip i{display:block;height:4px;margin:6px 8px 0;border-radius:2px;background:var(--line);overflow:hidden}
+.strip i u{display:block;height:100%;background:var(--ac)}
+.strip .sel{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.strip .sel span{color:var(--bg);opacity:.75}
+.strip .hoy b::after{content:"•";color:var(--ac);margin-left:1px}
+.bar{height:8px;background:var(--line);border-radius:4px;overflow:hidden;margin:6px 0 4px}
+.bar u{display:block;height:100%;background:var(--ac);transition:width .25s}
+.row{display:flex;align-items:stretch;background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:8px;overflow:hidden}
+.chk{width:56px;flex:none;display:grid;place-items:center}
+.chk span{width:26px;height:26px;border-radius:8px;border:2px solid var(--mut);display:grid;place-items:center;font-weight:800;color:var(--onac)}
+.done .chk span{background:var(--ac);border-color:var(--ac)}
+.info{flex:1;text-align:left;padding:12px 12px 12px 0}
+.info b{display:block;font-weight:650}
+.info small{color:var(--mut);display:block}
+.done .info b{text-decoration:line-through;opacity:.55}
